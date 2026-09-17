@@ -5,7 +5,7 @@ import { weddings } from "@/content/data";
 
 export const metadata: Metadata = {
   title: "Bodas",
-  description: "Bodas reales disenadas y coordinadas por Dile a la Chica. Celebraciones autenticas con alma.",
+  description: "Bodas reales diseñadas y coordinadas por Dile a la Chica. Celebraciones auténticas con alma.",
 };
 
 export default function Bodas() {
@@ -20,7 +20,7 @@ export default function Bodas() {
         <div style={{ position: "relative", zIndex: 3, maxWidth: 760 }}>
           <span className="eyebrow" style={{ color: "var(--coral-soft)", display: "block", marginBottom: 16 }}>Portfolio</span>
           <h1 className="serif" style={{ fontSize: "clamp(40px,5.8vw,86px)", fontWeight: 400, color: "#fff", lineHeight: 1.06, margin: "0 0 16px", letterSpacing: ".5px" }}>Bodas con alma</h1>
-          <p className="sans" style={{ fontSize: "clamp(15px,1.2vw,17px)", color: "rgba(255,255,255,.9)", lineHeight: 1.7, margin: 0, fontWeight: 300, maxWidth: 520 }}>Cada celebracion es unica. Aqui podeis ver algunas de las historias que he tenido el placer de acompanar.</p>
+          <p className="sans" style={{ fontSize: "clamp(15px,1.2vw,17px)", color: "rgba(255,255,255,.9)", lineHeight: 1.7, margin: 0, fontWeight: 300, maxWidth: 520 }}>Cada celebración es única. Aquí podéis ver algunas de las historias que he tenido el placer de acompañar.</p>
         </div>
       </section>
 
@@ -42,7 +42,7 @@ export default function Bodas() {
       </section>
 
       <section style={{ background: "var(--coral-bg)", padding: "clamp(56px,8vw,100px) clamp(20px,6vw,88px)", textAlign: "center" }}>
-        <h2 className="serif" style={{ fontSize: "clamp(26px,3.4vw,44px)", fontWeight: 400, color: "var(--ink)", margin: "0 0 24px", fontStyle: "italic" }}>Quieres que tu boda este aqui?</h2>
+        <h2 className="serif" style={{ fontSize: "clamp(26px,3.4vw,44px)", fontWeight: 400, color: "var(--ink)", margin: "0 0 24px", fontStyle: "italic" }}>¿Quieres que tu boda esté aquí?</h2>
         <Link href="/contacto" className="btn btn-coral">Hablemos</Link>
       </section>
     </main>

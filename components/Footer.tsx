@@ -1,13 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import { nav, site } from "@/content/data";
 
 export function Footer() {
   return (
     <footer style={{ background: "var(--ink)", padding: "52px clamp(20px,6vw,88px)" }}>
       <div className="wrap" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
-        <Link href="/" style={{ display: "flex", flexDirection: "column", lineHeight: 1, textDecoration: "none" }}>
-          <span className="serif" style={{ fontSize: 22, color: "#fff", fontWeight: 600 }}>Dile a la Chica</span>
-          <span className="sans" style={{ fontSize: 8, letterSpacing: "3.5px", textTransform: "uppercase", color: "var(--coral-soft)", marginTop: 3, fontWeight: 500 }}>Event & Wedding Planner</span>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+          <Image src="/dlc/logo.jpg" alt="Dile a la Chica" width={32} height={32} style={{ borderRadius: 5 }} />
+          <span className="serif" style={{ fontSize: 16, color: "#fff", fontWeight: 600 }}>Dile a la Chica</span>
         </Link>
         <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
           {nav.map((l) => (

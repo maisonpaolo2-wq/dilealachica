@@ -2,8 +2,9 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { nav, site } from "@/content/data";
+import { nav } from "@/content/data";
 
 export function Nav() {
   const pathname = usePathname();
@@ -37,32 +38,37 @@ export function Nav() {
 
   const solid = scrolled || !isHome;
   const fg = solid ? "var(--ink)" : "#fff";
-  const accent = solid ? "var(--coral)" : "var(--coral-soft)";
 
   return (
     <>
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: solid ? "12px clamp(20px,5vw,56px)" : "18px clamp(20px,5vw,56px)",
+        padding: solid ? "10px clamp(20px,5vw,56px)" : "16px clamp(20px,5vw,56px)",
         background: solid ? "rgba(255,248,243,.97)" : "transparent",
         backdropFilter: solid ? "blur(10px)" : "none",
         boxShadow: solid && scrolled ? "0 1px 14px rgba(26,26,26,.06)" : "none",
         transition: "all .5s ease",
       }}>
-        <Link href="/" onClick={closeMenu} style={{ display: "flex", flexDirection: "column", lineHeight: 1, textDecoration: "none" }}>
-          <span className="serif" style={{ fontSize: 24, color: fg, transition: "color .5s", fontWeight: 600 }}>Dile a la Chica</span>
-          <span className="sans" style={{ fontSize: 8, letterSpacing: "3.5px", textTransform: "uppercase", color: accent, marginTop: 3, fontWeight: 500, transition: "color .5s" }}>Event & Wedding Planner</span>
+        <Link href="/" onClick={closeMenu} style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+          <Image
+            src="/dlc/logo.jpg"
+            alt="Dile a la Chica"
+            width={38}
+            height={38}
+            style={{ borderRadius: 6 }}
+          />
+          <span className="serif" style={{ fontSize: 18, color: fg, transition: "color .5s", fontWeight: 600, letterSpacing: ".3px" }}>Dile a la Chica</span>
         </Link>
 
         <div className={`navlinks ${open ? "open" : ""}`}>
           {nav.map((l) => (
-            <Link key={l.href} href={l.href} className="navlink" onClick={closeMenu} style={{ fontSize: 11, letterSpacing: "2.5px", textTransform: "uppercase", color: fg, fontWeight: 500 }}>{l.label}</Link>
+            <Link key={l.href} href={l.href} className="navlink" onClick={closeMenu} style={{ fontSize: 11, letterSpacing: "2.5px", textTransform: "uppercase", color: fg, fontWeight: 500, fontFamily: "var(--sans)" }}>{l.label}</Link>
           ))}
-          <Link href="/contacto" onClick={closeMenu} style={{ fontSize: 11, letterSpacing: "2.5px", textTransform: "uppercase", color: "#fff", fontWeight: 600, background: "var(--coral)", padding: "12px 24px", transition: "all .3s" }}>Hablemos</Link>
+          <Link href="/contacto" onClick={closeMenu} style={{ fontSize: 11, letterSpacing: "2.5px", textTransform: "uppercase", color: "#fff", fontWeight: 600, background: "var(--coral)", padding: "12px 24px", transition: "all .3s", fontFamily: "var(--sans)" }}>Hablemos</Link>
         </div>
 
-        <button className="menu-toggle" aria-label="Menu" aria-expanded={open} onClick={toggleMenu} style={{ color: fg }}>
+        <button className="menu-toggle" aria-label="Menú" aria-expanded={open} onClick={toggleMenu} style={{ color: fg }}>
           <span /><span /><span />
         </button>
       </nav>

@@ -8,7 +8,7 @@ import { services, process, site } from "@/content/data";
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Planificacion completa, diseno con alma, coordinacion del dia y bodas destino. Elige como quieres que te acompane Dile a la Chica.",
+    "Planificación completa, diseño con alma, coordinación del día y bodas destino. Elige cómo quieres que te acompañe Dile a la Chica.",
 };
 
 export default function Servicios() {
@@ -23,7 +23,7 @@ export default function Servicios() {
         <div style={{ position: "relative", zIndex: 3, maxWidth: 760 }}>
           <span className="eyebrow" style={{ color: "var(--coral-soft)", display: "block", marginBottom: 16 }}>Lo que hago</span>
           <h1 className="serif" style={{ fontSize: "clamp(40px,5.8vw,86px)", fontWeight: 400, color: "#fff", lineHeight: 1.06, margin: "0 0 20px", letterSpacing: ".5px" }}>Servicios</h1>
-          <p className="sans" style={{ fontSize: "clamp(15px,1.2vw,17px)", color: "rgba(255,255,255,.9)", lineHeight: 1.7, margin: 0, fontWeight: 300, maxWidth: 520 }}>Decidid cuanto quereis delegar. Desde la planificacion completa hasta la coordinacion del dia, siempre con el mismo cuidado y la misma intencion.</p>
+          <p className="sans" style={{ fontSize: "clamp(15px,1.2vw,17px)", color: "rgba(255,255,255,.9)", lineHeight: 1.7, margin: 0, fontWeight: 300, maxWidth: 520 }}>Decidid cuánto queréis delegar. Desde la planificación completa hasta la coordinación del día, siempre con el mismo cuidado y la misma intención.</p>
         </div>
       </section>
 
@@ -42,7 +42,7 @@ export default function Servicios() {
             </div>
             <h2 className="serif" style={{ fontSize: "clamp(28px,3.2vw,44px)", fontWeight: 400, color: "var(--ink)", lineHeight: 1.15, margin: "0 0 16px" }}>{s.title}</h2>
             <p className="sans" style={{ fontSize: 15.5, color: "var(--ink-soft)", lineHeight: 1.85, margin: "0 0 24px" }}>{s.detail}</p>
-            <p className="eyebrow" style={{ fontSize: 11, color: "var(--coral)", margin: "0 0 12px" }}>Que incluye</p>
+            <p className="eyebrow" style={{ fontSize: 11, color: "var(--coral)", margin: "0 0 12px" }}>Qué incluye</p>
             <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
               {s.includes.map((it) => (
                 <li key={it} className="sans" style={{ fontSize: 14.5, color: "var(--ink)", padding: "10px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 12 }}>
@@ -64,7 +64,7 @@ export default function Servicios() {
         <div className="wrap">
           <div style={{ textAlign: "center", marginBottom: 44 }}>
             <span className="eyebrow" style={{ color: "var(--coral-soft)", display: "block", marginBottom: 14 }}>Paso a paso</span>
-            <h2 className="serif" style={{ fontSize: "clamp(28px,3.6vw,46px)", fontWeight: 400, color: "#fff", margin: 0 }}>Asi es trabajar conmigo</h2>
+            <h2 className="serif" style={{ fontSize: "clamp(28px,3.6vw,46px)", fontWeight: 400, color: "#fff", margin: 0 }}>Así es trabajar conmigo</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,220px),1fr))", gap: 0, borderTop: "1px solid var(--line-on-dark)" }}>
             {process.map((p, i) => (
@@ -83,7 +83,7 @@ export default function Servicios() {
           <div style={{ textAlign: "center", marginBottom: 40 }}>
             <span className="eyebrow" style={{ color: "var(--coral-soft)", display: "block", marginBottom: 14 }}>Hablemos</span>
             <h2 className="serif" style={{ fontSize: "clamp(28px,3.6vw,46px)", fontWeight: 400, color: "#fff", margin: "0 0 12px" }}>Reserva tu fecha</h2>
-            <p className="sans" style={{ fontSize: 14.5, color: "var(--on-dark-soft)", lineHeight: 1.8, margin: 0, fontWeight: 300 }}>Elegid el servicio arriba y queda seleccionado aqui. Os respondo personalmente.</p>
+            <p className="sans" style={{ fontSize: 14.5, color: "var(--on-dark-soft)", lineHeight: 1.8, margin: 0, fontWeight: 300 }}>Elegid el servicio arriba y queda seleccionado aquí. Os respondo personalmente.</p>
           </div>
           <Suspense fallback={null}><ContactForm /></Suspense>
           <p className="sans" style={{ textAlign: "center", marginTop: 28, fontSize: 13, color: "var(--on-dark-soft)" }}>

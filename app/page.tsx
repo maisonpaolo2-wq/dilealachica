@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
-import { services, process, weddings, site } from "@/content/data";
+import { services, process, weddings, site, dlcParaTi, dlcNoParaTi, testimonials } from "@/content/data";
 
 export default function Home() {
   const igTiles = ["/photos/p1.jpg", "/photos/p5.jpg", "/photos/p6.jpg", "/photos/p7.jpg", "/photos/p10.jpg", "/photos/p11.jpg"];
@@ -17,9 +17,9 @@ export default function Home() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top,rgba(26,26,26,.85) 0%,rgba(26,26,26,.15) 45%,rgba(26,26,26,.25) 100%)" }} />
         <div style={{ position: "absolute", inset: "clamp(14px,2vw,26px)", border: "1px solid rgba(240,184,168,.3)", pointerEvents: "none", zIndex: 2 }} />
         <div style={{ position: "relative", zIndex: 3, padding: "0 clamp(22px,6vw,90px) clamp(56px,8vw,96px)", maxWidth: 920, animation: "fadeUp 1.2s ease-out" }}>
-          <span className="eyebrow" style={{ color: "var(--coral-soft)", display: "block", marginBottom: 20 }}>Tu historia, tu boda</span>
+          <span className="eyebrow" style={{ color: "var(--coral-soft)", display: "block", marginBottom: 20 }}>Tu historia, tu boda ♡</span>
           <h1 className="serif" style={{ fontSize: "clamp(42px,6.2vw,88px)", fontWeight: 400, color: "#fff", lineHeight: 1.08, margin: "0 0 22px", letterSpacing: ".5px" }}>Planear tu boda es tan divertido como vivirla</h1>
-          <p className="sans" style={{ fontSize: "clamp(15px,1.3vw,18px)", color: "rgba(255,255,255,.9)", lineHeight: 1.65, margin: "0 0 38px", fontWeight: 300, maxWidth: 520, fontStyle: "italic" }}>Dile TODO a la chica.</p>
+          <p className="script" style={{ fontSize: "clamp(20px,2vw,28px)", color: "var(--coral-soft)", lineHeight: 1.4, margin: "0 0 38px" }}>Dile TODO a la chica.</p>
           <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
             <Link href="/contacto" className="btn btn-coral">Hablemos</Link>
             <Link href="/bodas" className="btn btn-outline-light">Ver bodas</Link>
@@ -37,17 +37,49 @@ export default function Home() {
             <div style={{ position: "absolute", top: -16, left: -16, width: 120, height: 120, borderTop: "1px solid var(--coral)", borderLeft: "1px solid var(--coral)", zIndex: 0 }} />
             <div style={{ position: "absolute", bottom: -16, right: -16, width: 120, height: 120, borderBottom: "1px solid var(--coral)", borderRight: "1px solid var(--coral)", zIndex: 0 }} />
             <div className="zoomable" style={{ position: "relative", zIndex: 1, aspectRatio: "4/5" }}>
-              <Image src="/photos/p8.jpg" alt="Anna Alvarez, Event & Wedding Planner" fill sizes="(min-width:860px) 40vw, 100vw" style={{ objectFit: "cover", objectPosition: "center top" }} />
+              <Image src="/photos/p8.jpg" alt="Anna Álvarez, Event & Wedding Planner" fill sizes="(min-width:860px) 40vw, 100vw" style={{ objectFit: "cover", objectPosition: "center top" }} />
             </div>
           </div>
           <div>
             <span className="eyebrow" style={{ display: "block", marginBottom: 18 }}>Hola, soy Anna</span>
-            <h2 className="serif" style={{ fontSize: "clamp(28px,3.4vw,46px)", fontWeight: 400, color: "var(--ink)", lineHeight: 1.25, margin: "0 0 24px" }}>No solo organizo bodas. Acompano a personas en uno de los momentos mas bonitos de su vida</h2>
-            <p className="sans" style={{ fontSize: 15.5, color: "var(--ink-soft)", lineHeight: 1.85, margin: "0 0 18px" }}>Soy wedding planner en Barcelona y Catalunya. Creo en las bodas autenticas, las que se sienten de verdad, las que nacen de una intencion clara y se celebran con alma.</p>
-            <p className="sans" style={{ fontSize: 15.5, color: "var(--ink-soft)", lineHeight: 1.85, margin: "0 0 32px" }}>Trabajo con pocas parejas al ano porque prefiero estar presente de verdad en cada proyecto. No busco bodas perfectas. Busco bodas que os representen.</p>
+            <h2 className="serif" style={{ fontSize: "clamp(28px,3.4vw,46px)", fontWeight: 400, color: "var(--ink)", lineHeight: 1.25, margin: "0 0 24px" }}>No solo organizo bodas. Acompaño a personas en uno de los momentos más bonitos de su vida</h2>
+            <p className="sans" style={{ fontSize: 15.5, color: "var(--ink-soft)", lineHeight: 1.85, margin: "0 0 18px" }}>Soy wedding planner en Barcelona y Catalunya. Creo en las bodas auténticas, las que se sienten de verdad, las que nacen de una intención clara y se celebran con alma.</p>
+            <p className="sans" style={{ fontSize: 15.5, color: "var(--ink-soft)", lineHeight: 1.85, margin: "0 0 32px" }}>Trabajo con pocas parejas al año porque prefiero estar presente de verdad en cada proyecto. No busco bodas perfectas. Busco bodas que os representen.</p>
             <div style={{ display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap", borderTop: "1px solid var(--line)", paddingTop: 26 }}>
-              <Link href="/sobre-mi" className="arrow">Conoceme mejor <span style={{ fontSize: 15 }}>&rarr;</span></Link>
-              <span className="script" style={{ fontSize: 30, color: "var(--coral)" }}>Anna</span>
+              <Link href="/sobre-mi" className="arrow">Conóceme mejor <span style={{ fontSize: 15 }}>&rarr;</span></Link>
+              <span className="script" style={{ fontSize: 32, color: "var(--coral)" }}>Anna</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DLC ES PARA TI SI... */}
+      <section style={{ background: "var(--coral-bg)", padding: "clamp(64px,9vw,120px) clamp(20px,6vw,88px)" }}>
+        <div className="wrap" style={{ maxWidth: 1000 }}>
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <span className="eyebrow" style={{ display: "block", marginBottom: 14, color: "var(--coral-deep)" }}>Conectamos?</span>
+            <h2 className="serif" style={{ fontSize: "clamp(30px,4vw,52px)", fontWeight: 400, color: "var(--ink)", margin: 0, letterSpacing: ".5px" }}>¿Es DLC para ti?</h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,380px),1fr))", gap: "clamp(32px,5vw,64px)" }}>
+            <div>
+              <h3 className="serif" style={{ fontSize: "clamp(22px,2.4vw,30px)", fontWeight: 400, color: "var(--coral-deep)", margin: "0 0 24px", fontStyle: "italic" }}>DLC es para ti si...</h3>
+              <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                {dlcParaTi.map((item) => (
+                  <li key={item} className="sans" style={{ fontSize: 15, color: "var(--ink)", padding: "12px 0", borderTop: "1px solid rgba(224,123,95,.2)", display: "flex", gap: 12, lineHeight: 1.6 }}>
+                    <span style={{ color: "var(--coral)", fontSize: 18, lineHeight: 1.4 }}>♡</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="serif" style={{ fontSize: "clamp(22px,2.4vw,30px)", fontWeight: 400, color: "var(--ink-soft)", margin: "0 0 24px", fontStyle: "italic" }}>DLC no es para ti si...</h3>
+              <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                {dlcNoParaTi.map((item) => (
+                  <li key={item} className="sans" style={{ fontSize: 15, color: "var(--ink-soft)", padding: "12px 0", borderTop: "1px solid rgba(26,26,26,.08)", display: "flex", gap: 12, lineHeight: 1.6 }}>
+                    <span style={{ color: "var(--ink-soft)", fontSize: 14 }}>✕</span>{item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -84,7 +116,7 @@ export default function Home() {
           <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 52px" }}>
             <span className="eyebrow" style={{ display: "block", marginBottom: 14 }}>Portfolio</span>
             <h2 className="serif" style={{ fontSize: "clamp(30px,4vw,52px)", fontWeight: 400, color: "var(--ink)", margin: "0 0 16px", letterSpacing: ".5px" }}>Bodas con alma</h2>
-            <p className="sans" style={{ fontSize: 15, color: "var(--ink-soft)", lineHeight: 1.75, margin: 0 }}>Celebraciones autenticas, disenadas y coordinadas de principio a fin. Cada una, irrepetible.</p>
+            <p className="sans" style={{ fontSize: 15, color: "var(--ink-soft)", lineHeight: 1.75, margin: 0 }}>Celebraciones auténticas, diseñadas y coordinadas de principio a fin. Cada una, irrepetible.</p>
           </div>
           <div className="g-editorial">
             <Link href={`/bodas/${weddings[0].slug}`} className="zoomable" style={{ position: "relative", textDecoration: "none", display: "block", minHeight: 340 }}>
@@ -120,7 +152,7 @@ export default function Home() {
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <span className="eyebrow" style={{ display: "block", marginBottom: 14 }}>Paso a paso</span>
-            <h2 className="serif" style={{ fontSize: "clamp(30px,4vw,50px)", fontWeight: 400, color: "var(--ink)", margin: 0, letterSpacing: ".5px" }}>Asi es trabajar conmigo</h2>
+            <h2 className="serif" style={{ fontSize: "clamp(30px,4vw,50px)", fontWeight: 400, color: "var(--ink)", margin: 0, letterSpacing: ".5px" }}>Así es trabajar conmigo</h2>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             {process.map((p, i) => {
@@ -140,12 +172,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIO */}
+      {/* TESTIMONIOS */}
       <section style={{ background: "var(--coral-bg)", padding: "clamp(64px,9vw,120px) clamp(20px,6vw,88px)", textAlign: "center" }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <span className="eyebrow" style={{ display: "block", marginBottom: 24, color: "var(--coral-deep)" }}>Lo que dicen nuestras parejas</span>
-          <p className="serif" style={{ fontSize: "clamp(22px,3vw,34px)", fontWeight: 400, color: "var(--ink)", lineHeight: 1.5, margin: "0 0 26px", fontStyle: "italic" }}>Fantastica, cercana y super profesional! Nos acompano en todo el proceso y el dia de la boda fue impecable. No podriamos haber elegido mejor.</p>
-          <span className="sans" style={{ fontSize: 11, letterSpacing: "2.5px", textTransform: "uppercase", color: "var(--coral-deep)", fontWeight: 600 }}>Gisela Pesarrodona</span>
+          <span className="eyebrow" style={{ display: "block", marginBottom: 12, color: "var(--coral-deep)" }}>Lo que dicen nuestras parejas</span>
+          <div style={{ display: "flex", justifyContent: "center", gap: 4, marginBottom: 24 }}>
+            {Array.from({ length: testimonials[0].stars }).map((_, i) => (
+              <span key={i} style={{ color: "var(--coral)", fontSize: 18 }}>★</span>
+            ))}
+          </div>
+          <p className="serif" style={{ fontSize: "clamp(22px,3vw,34px)", fontWeight: 400, color: "var(--ink)", lineHeight: 1.5, margin: "0 0 26px", fontStyle: "italic" }}>{testimonials[0].quote}</p>
+          <span className="sans" style={{ fontSize: 12, letterSpacing: "2.5px", textTransform: "uppercase", color: "var(--coral-deep)", fontWeight: 600, display: "block" }}>{testimonials[0].name}</span>
+          <span className="sans" style={{ fontSize: 11, color: "var(--ink-soft)", fontWeight: 300, marginTop: 4, display: "block" }}>Casada el {testimonials[0].date}</span>
         </div>
       </section>
 
@@ -154,7 +192,7 @@ export default function Home() {
         <div className="wrap">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 12, marginBottom: 32 }}>
             <div>
-              <span className="eyebrow" style={{ display: "block", marginBottom: 10 }}>El dia a dia</span>
+              <span className="eyebrow" style={{ display: "block", marginBottom: 10 }}>El día a día</span>
               <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="serif" style={{ fontSize: "clamp(24px,3vw,34px)", color: "var(--ink)", fontWeight: 400 }}>{site.instagramHandle}</a>
             </div>
             <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="arrow">Seguir <span style={{ fontSize: 15 }}>&rarr;</span></a>
@@ -174,8 +212,8 @@ export default function Home() {
         <div className="wrap g-contact">
           <div>
             <span className="eyebrow" style={{ color: "var(--coral-soft)", display: "block", marginBottom: 16 }}>Contacto</span>
-            <h2 className="serif" style={{ fontSize: "clamp(30px,3.8vw,50px)", fontWeight: 400, color: "#fff", lineHeight: 1.15, margin: "0 0 20px" }}>Teneis fecha? Hablemos</h2>
-            <p className="sans" style={{ fontSize: 15, color: "var(--on-dark-soft)", lineHeight: 1.8, margin: "0 0 32px", fontWeight: 300, maxWidth: 420 }}>Escribeme y te respondo personalmente. Empezamos con una conversacion tranquila para conocernos y ver como puedo acompanaroos.</p>
+            <h2 className="serif" style={{ fontSize: "clamp(30px,3.8vw,50px)", fontWeight: 400, color: "#fff", lineHeight: 1.15, margin: "0 0 20px" }}>¿Tenéis fecha? Hablemos</h2>
+            <p className="sans" style={{ fontSize: 15, color: "var(--on-dark-soft)", lineHeight: 1.8, margin: "0 0 32px", fontWeight: 300, maxWidth: 420 }}>Escríbeme y te respondo personalmente. Empezamos con una conversación tranquila para conocernos y ver cómo puedo acompañaros.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               <a href={`mailto:${site.email}`} className="sans" style={{ fontSize: 14, color: "#fff", fontWeight: 300 }}>{site.email}</a>
               <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="sans" style={{ fontSize: 14, color: "#fff", fontWeight: 300 }}>{site.instagramHandle}</a>

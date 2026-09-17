@@ -17,9 +17,9 @@
   --on-dark: #FFF8F3;
   --on-dark-soft: rgba(255,248,243,.78);
 
-  --serif: var(--font-cormorant), "Georgia", serif;
-  --script: var(--font-caveat), cursive;
-  --sans: var(--font-dm-sans), system-ui, sans-serif;
+  --serif: var(--font-playfair), "Georgia", serif;
+  --script: var(--font-dancing), cursive;
+  --sans: var(--font-outfit), system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }

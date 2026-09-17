@@ -11,12 +11,12 @@ const field: React.CSSProperties = {
   borderRadius: 2, transition: "border-color .3s",
 };
 const opt = { color: "#1A1A1A" };
-const servicioOptions = ["Aun no lo se", ...services.map((s) => s.title)];
+const servicioOptions = ["Aún no lo sé", ...services.map((s) => s.title)];
 
 export function ContactForm() {
   const params = useSearchParams();
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
-  const [servicio, setServicio] = useState("Aun no lo se");
+  const [servicio, setServicio] = useState("Aún no lo sé");
 
   useEffect(() => {
     const q = params.get("servicio");
@@ -24,8 +24,8 @@ export function ContactForm() {
   }, [params]);
 
   const note =
-    status === "ok" ? "Gracias, te respondere muy pronto."
-    : status === "error" ? `Algo ha fallado. Escribeme a ${site.email}.`
+    status === "ok" ? "¡Gracias! Te responderé muy pronto."
+    : status === "error" ? `Algo ha fallado. Escríbeme a ${site.email}.`
     : status === "sending" ? "Enviando..." : "";
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -37,7 +37,7 @@ export function ContactForm() {
       if (!res.ok) throw new Error();
       setStatus("ok");
       e.currentTarget.reset();
-      setServicio("Aun no lo se");
+      setServicio("Aún no lo sé");
     } catch { setStatus("error"); }
   }
 
@@ -55,9 +55,9 @@ export function ContactForm() {
         </select>
       </div>
       <select name="servicio" value={servicio} onChange={(e) => setServicio(e.target.value)} style={field}>
-        {servicioOptions.map((t) => <option key={t} style={opt}>{t === "Aun no lo se" ? "Servicio de interes (aun no lo se)" : t}</option>)}
+        {servicioOptions.map((t) => <option key={t} style={opt}>{t === "Aún no lo sé" ? "Servicio de interés (aún no lo sé)" : t}</option>)}
       </select>
-      <textarea name="message" rows={4} placeholder="Cuentame vuestra idea..." style={{ ...field, resize: "vertical" }} />
+      <textarea name="message" rows={4} placeholder="Cuéntame vuestra idea..." style={{ ...field, resize: "vertical" }} />
       <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
         <button type="submit" className="btn btn-coral" disabled={status === "sending"} style={{ alignSelf: "flex-start", opacity: status === "sending" ? .6 : 1 }}>Enviar</button>
         {note && <span className="sans" style={{ fontSize: 13, color: status === "error" ? "#E8A89A" : "var(--coral-soft)", fontWeight: 300 }}>{note}</span>}
