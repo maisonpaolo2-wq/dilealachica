@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -11,6 +11,7 @@ export function Nav() {
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const scrollPos = useRef(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -19,21 +20,36 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const lockBody = useCallback(() => {
+    scrollPos.current = window.scrollY;
+    document.body.style.top = `-${scrollPos.current}px`;
+    document.body.classList.add("menu-open");
+  }, []);
+
+  const unlockBody = useCallback(() => {
+    document.body.classList.remove("menu-open");
+    document.body.style.top = "";
+    window.scrollTo(0, scrollPos.current);
+  }, []);
+
   const toggleMenu = useCallback(() => {
     setOpen((v) => {
-      const next = !v;
-      document.body.classList.toggle("menu-open", next);
-      return next;
+      if (v) unlockBody();
+      else lockBody();
+      return !v;
     });
-  }, []);
+  }, [lockBody, unlockBody]);
 
   const closeMenu = useCallback(() => {
     setOpen(false);
-    document.body.classList.remove("menu-open");
-  }, []);
+    unlockBody();
+  }, [unlockBody]);
 
   useEffect(() => {
-    return () => document.body.classList.remove("menu-open");
+    return () => {
+      document.body.classList.remove("menu-open");
+      document.body.style.top = "";
+    };
   }, []);
 
   const solid = scrolled || !isHome;

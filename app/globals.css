@@ -25,7 +25,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--cream); font-family: var(--sans); -webkit-font-smoothing: antialiased; color: var(--ink); overflow-x: hidden; font-weight: 400; }
-body.menu-open { overflow: hidden; }
+body.menu-open { position: fixed; width: 100%; overflow: hidden; }
 a { color: var(--coral); text-decoration: none; }
 a:hover { color: var(--coral-deep); }
 img { display: block; max-width: 100%; }
